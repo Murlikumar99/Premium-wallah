@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Wallah - High Value Courses</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+            --warning: #f9c74f;
+            --danger: #f94144;
+            --gradient: linear-gradient(135deg, #ff9a00 0%, #ff6a00 100%);
+            --gradient-text: linear-gradient(135deg, #ff9a00 0%, #ff6a00 50%, #ff3c00 100%);
+            --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+            --transition: all 0.3s ease;
+            --bg-color: #f9fafb;
+            --text-color: #212529;
+            --card-bg: white;
+            --header-bg: linear-gradient(135deg, #ff9a00 0%, #ff6a00 100%);
+            --footer-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            --search-bg: white;
+            --search-border: #e9ecef;
+        }
+
+        .dark-mode {
+            --bg-color: #121212;
+            --text-color: #f8f9fa;
+            --card-bg: #1e1e1e;
+            --header-bg: linear-gradient(135deg, #3a0ca3 0%, #4361ee 100%);
+            --footer-bg: linear-gradient(135deg, #0d0d17 0%, #0b1320 100%);
+            --search-bg: #2d2d2d;
+            --search-border: #3d3d3d;
+            --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: var(--transition);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--header-bg);
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .premium-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffd166 0%, #ffb74d 100%);
+            color: #7b2c00;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(255, 167, 38, 0.4);
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .premium-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 167, 38, 0.6);
+        }
+
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 50px;
+            height: 26px;
+            border-radius: 50px;
+            padding: 3px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .theme-toggle span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            transition: var(--transition);
+            transform: translateX(0);
+        }
+
+        .dark-mode .theme-toggle {
+            justify-content: flex-end;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        /* NEW BANNER STYLES - Modern Design */
+        .banner {
+            height: 70vh;
+            min-height: 500px;
+            max-height: 700px;
+            background: linear-gradient(120deg, #8e2de2, #4a00e0);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 20%);
+            z-index: 1;
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 10;
+            padding: 20px;
+            max-width: 800px;
+        }
+
+        .banner h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ff9a00 0%, #ff6a00 50%, #ff3c00 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradientMove 5s infinite alternate;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .banner p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .telegram-cta {
+            display: inline-block;
+            background: #0088cc;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .telegram-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .telegram-cta:hover::before {
+            left: 100%;
+        }
+
+        .telegram-cta:hover {
+            background: #006da3;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 136, 204, 0.3);
+        }
+
+        .floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .floating-icon {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.1;
+            color: white;
+            animation: float 15s infinite linear;
+        }
+
+        .floating-icon:nth-child(1) { top: 10%; left: 10%; animation-duration: 20s; }
+        .floating-icon:nth-child(2) { top: 20%; right: 15%; animation-duration: 25s; }
+        .floating-icon:nth-child(3) { bottom: 30%; left: 20%; animation-duration: 18s; }
+        .floating-icon:nth-child(4) { bottom: 15%; right: 25%; animation-duration: 22s; }
+        .floating-icon:nth-child(5) { top: 40%; left: 30%; animation-duration: 17s; }
+        .floating-icon:nth-child(6) { top: 25%; right: 30%; animation-duration: 23s; }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            100% { transform: translateY(0) rotate(360deg); }
+        }
+
+        .credit {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            z-index: 10;
+        }
+
+        /* Search Bar */
+        .search-section {
+            padding: 40px 0;
+            background: var(--bg-color);
+            transition: var(--transition);
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 16px 60px 16px 24px;
+            border: 2px solid var(--search-border);
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            background: var(--search-bg);
+            color: var(--text-color);
+        }
+
+        .search-bar:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 4px 16px rgba(67, 97, 238, 0.15);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c757d;
+            font-size: 1.2rem;
+        }
+
+        /* No Results Message */
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            display: none;
+        }
+
+        .no-results i {
+            font-size: 3rem;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+
+        .no-results h3 {
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .no-results p {
+            margin-bottom: 25px;
+            color: #6c757d;
+        }
+
+        /* Categories Section */
+        .categories {
+            padding: 60px 0;
+            background: var(--bg-color);
+            transition: var(--transition);
+        }
+
+        .category {
+            margin-bottom: 60px;
+        }
+
+        .category-title {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .course-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-image {
+            height: 160px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .course-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .course-image i {
+            z-index: 1;
+        }
+
+        .course-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .course-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            min-height: 52px;
+            color: var(--text-color);
+        }
+
+        .course-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .course-btn {
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .demo-btn {
+            background: #e9ecef;
+            color: var(--dark);
+        }
+
+        .demo-btn:hover {
+            background: #dee2e6;
+        }
+
+        .official-btn {
+            background: var(--primary);
+            color: white;
+        }
+
+        .official-btn:hover {
+            background: var(--secondary);
+        }
+
+        .access-btn {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .access-btn:hover {
+            opacity: 0.9;
+            box-shadow: 0 4px 12px rgba(255, 106, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 50px 0 20px;
+            transition: var(--transition);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-link {
+            color: #a1a1a1;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .footer-link:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #2d3748;
+            color: #a1a1a1;
+            font-size: 0.9rem;
+        }
+
+        /* Premium Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            color: var(--text-color);
+        }
+
+        .modal h2 {
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .modal p {
+            margin-bottom: 30px;
+        }
+
+        .modal-close {
+            background: var(--danger);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .courses-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .banner h1 {
+                font-size: 2.5rem;
+            }
+            
+            .courses-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .category-title {
+                font-size: 1.8rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .logo-text {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .banner h1 {
+                font-size: 2rem;
+            }
+            
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .premium-btn {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+            
+            .logo {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Logo and Premium Button -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <i class="fas fa-crown logo-icon"></i>
+                    <span class="logo-text">Premium Wallah</span>
+                </a>
+                <div class="header-right">
+                    <button class="theme-toggle" id="themeToggle">
+                        <span></span>
+                    </button>
+                    <a href="#" class="premium-btn" id="premiumBtn">
+                        <i class="fas fa-crown"></i> GET PREMIUM ACCESS
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- NEW BANNER with different design -->
+    <section class="banner">
+        <div class="floating-icons">
+            <i class="fas fa-graduation-cap floating-icon"></i>
+            <i class="fas fa-book floating-icon"></i>
+            <i class="fas fa-certificate floating-icon"></i>
+            <i class="fas fa-laptop-code floating-icon"></i>
+            <i class="fas fa-chart-line floating-icon"></i>
+            <i class="fas fa-brain floating-icon"></i>
+        </div>
+        <div class="banner-content">
+            <h1>HIGH VALUED PREMIUM COURSES</h1>
+            <p>DISCOVER AN ELITE COLLECTION OF HIGH-VALUE COURSES FROM THE WORLD'S TOP EDUCATORS AND ELEVATE YOUR SKILLS LIKE NEVER BEFORE</p>
+            <a href="https://t.me/Ytmn5" class="telegram-cta">
+                <i class="fab fa-telegram"></i> CLICK HERE TO JOIN TELEGRAM
+            </a>
+        </div>
+        <div class="credit">PW SKILLS ALL COURSES</div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search for courses...">
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- No Results Message -->
+    <div class="container">
+        <div class="no-results" id="noResults">
+            <i class="fas fa-search"></i>
+            <h3>No Courses Found</h3>
+            <p>We couldn't find any courses matching your search. Please try different keywords or contact admin for assistance.</p>
+            <a href="https://t.me/Ytmn5" class="telegram-cta">
+                <i class="fab fa-telegram"></i> Contact Admin on Telegram
+            </a>
+        </div>
+    </div>
+
+    <!-- Courses Categories -->
+    <section class="categories container">
+        <!-- Category will be dynamically generated with JavaScript -->
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="footer-link"><i class="fas fa-book"></i> All Courses</a>
+                <a href="#" class="footer-link"><i class="fas fa-graduation-cap"></i> PW Skills</a>
+                <a href="#" class="footer-link"><i class="fas fa-chart-line"></i> Data Science</a>
+                <a href="#" class="footer-link"><i class="fas fa-blog"></i> Blogging & SEO</a>
+                <a href="#" class="footer-link"><i class="fas fa-ad"></i> Facebook Ads</a>
+                <a href="#" class="footer-link"><i class="fas fa-school"></i> Skillnation</a>
+                <a href="#" class="footer-link"><i class="fas fa-brain"></i> Self Improvement</a>
+                <a href="#" class="footer-link"><i class="fas fa-heartbeat"></i> Health & Fitness</a>
+                <a href="#" class="footer-link"><i class="fas fa-hand-holding-heart"></i> Relationship</a>
+                <a href="https://t.me/Skillcourses_free_telegram/14" class="footer-link"><i class="fab fa-telegram"></i> Telegram Channel</a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Premium Wallah. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Premium Modal -->
+    <div class="modal" id="premiumModal">
+        <div class="modal-content">
+            <h2>Get Premium Access</h2>
+            <p>Unlock all courses and premium features by joining our Telegram channel</p>
+            <a href="https://t.me/Ytmn5" class="telegram-cta">
+                <i class="fab fa-telegram"></i> Join Telegram
+            </a>
+            <button class="modal-close" id="modalClose">Close</button>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            // Save the theme preference
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Course data with banner images and official links
+        const coursesData = [
+            {
+                category: "PW SKILLS COURSES",
+                courses: [
+                    { name: "PW Data Analytics Course", banner: "https://i.postimg.cc/T11svXkT/b51e3ce0-dfa2-4a39-9679-f9f4eca0fde0.jpg", officialLink: "https://pwskills.com/course/Data-Analytics-master-course" },
+                    { name: "Data Science with Generative AI", banner: "https://i.postimg.cc/Yq4PXMG3/cf943544-166f-4e4d-b7c7-54379bab7ed7.jpg", officialLink: "https://pwskills.com/course/Data-Science-Generative-AI" },
+                    { name: "PW Skills - Python + DSA Course", banner: "https://i.postimg.cc/8zmxvwrQ/043c616b-3382-45e4-b241-ae5f4b9f4c0e.jpg", officialLink: "https://pwskills.com/course/Python-DSA" },
+                    { name: "PW Mobile Development Using React Native", banner: "https://i.postimg.cc/8zmxvwrQ/043c616b-3382-45e4-b241-ae5f4b9f4c0e.jpg", officialLink: "https://pwskills.com/course/React-Native" },
+                    { name: "PW Skills - Mastering Data Visualization with Power BI and MS Excel", banner: "https://i.postimg.cc/LXKfMkN5/images-1-18.jpg", officialLink: "https://pwskills.com/course/Data-Visualization" }
+                ]
+            },
+            {
+                category: "DATA SCIENCE COURSES",
+                courses: [
+                    { name: "Code with Harry - Data Science Course (Python)", banner: "https://i.postimg.cc/cLvxZr98/1744053514275-Temp-Thumb.png", officialLink: "https://www.codewithharry.com" },
+                    { name: "Data Science Season Recorded Course 3 [5 Minutes Engineering]", banner: "https://i.postimg.cc/jjhkFhH6/images-1-20.jpg", officialLink: "https://www.5minutesengineering.com" },
+                    { name: "Master Data Science and AI (Python + Power BI + SQL + Excel) [Pylab IT Career Institute]", banner: "https://i.postimg.cc/nVKYYL17/images-1-21.jpg", officialLink: "https://www.pylab.org" }
+                ]
+            },
+            {
+                category: "DATA ANALYTICS COURSES",
+                courses: [
+                    { name: "Data Analytics Course - Recorded Live & Offline Lectures", banner: "https://i.postimg.cc/KYgtKcz1/images-1-22.jpg", officialLink: "https://example.com/data-analytics" },
+                    { name: "PW Data Analytics Course [Hinglish]", banner: "https://i.postimg.cc/W3Grn90j/images-1-23.jpg", officialLink: "https://pwskills.com/course/Data-Analytics-master-course" },
+                    { name: "Data Analytics Season Recorded Course 1 [5 Minutes Engineering]", banner: "https://i.postimg.cc/5yfzkwmz/images-1-24.jpg", officialLink: "https://www.5minutesengineering.com" },
+                    { name: "Data Engineering Session Recorded Course 1", banner: "https://i.postimg.cc/fLftXVhR/images-1-25.jpg", officialLink: "https://example.com/data-engineering" },
+                    { name: "Data Analytics using Power BI [Aditi Gupta]", banner: "https://i.postimg.cc/h4MQtQrC/images-1-26.jpg", officialLink: "https://example.com/power-bi" },
+                    { name: "Data Analytics Corporate Training Programme", banner: "https://i.postimg.cc/h4MQtQrC/images-1-26.jpg", officialLink: "https://example.com/corporate-training" },
+                    { name: "Data Analysis using Power BI", banner: "https://i.postimg.cc/GmDpG4Fn/images-1-27.jpg", officialLink: "https://example.com/data-analysis" }
+                ]
+            },
+            {
+                category: "DHRUV RATHEE COURSES",
+                courses: [
+                    { name: "Time Management Full Course (Hindi)", banner: "https://i.postimg.cc/fLVWWkTP/66f1297be6a8a547698c3fb0-Image-12.png", officialLink: "https://www.dhruvrathee.com" },
+                    { name: "AI Chatbots Full Course", banner: "https://i.postimg.cc/G26L4r4m/65e8a443d3a217849e42841c-1-Desktop-Header-1.png", officialLink: "https://www.dhruvrathee.com" },
+                    { name: "YouTube Blueprint Full Course", banner: "https://i.postimg.cc/zXCzGs8q/65e8a443d3a217849e428471-Image-47.png", officialLink: "https://www.dhruvrathee.com" },
+                    { name: "How to Do a Million Things at Once (English)", banner: "https://i.postimg.cc/ncJxg37g/img-7615-3-5d65459aa2136ddc9c169ae840f9c005.jpg", officialLink: "https://www.dhruvrathee.com" },
+                    { name: "20+ AI Tools Live Workshop (New)", banner: "https://i.postimg.cc/gc44bJ6p/1757216820109.png", officialLink: "https://www.dhruvrathee.com" }
+                ]
+            },
+            {
+                category: "POWER BI COURSES",
+                courses: [
+                    { name: "Power BI Course by Satish Dhawale", banner: "https://i.postimg.cc/httV3yzf/hq720.jpg", officialLink: "https://example.com/satish-dhawale" },
+                    { name: "Jatan Shah - Business Intelligence Using Power BI", banner: "https://i.postimg.cc/httV3yzf/hq720.jpg", officialLink: "https://example.com/jatan-shah" }
+                ]
+            },
+            {
+                category: "ANKUR WARIKOO COURSES",
+                courses: [
+                    { name: "The Ultimate Guide to Effective Communication", banner: "https://i.postimg.cc/5N7m1WMw/images-1-28.jpg", officialLink: "https://ankurwarikoo.com" },
+                    { name: "Take Charge of Your Time", banner: "https://i.postimg.cc/j5tfPMbx/654bba79e4b03b0ba0db1b58-scaled-cover.png", officialLink: "https://ankurwarikoo.com" },
+                    { name: "Take Charge of Your Money", banner: "https://i.postimg.cc/ZKHJ5jfP/TCOYM.png", officialLink: "https://ankurwarikoo.com" },
+                    { name: "How to Instagram", banner: "https://i.postimg.cc/9XGLTkH9/IMFC.webp", officialLink: "https://ankurwarikoo.com" },
+                    { name: "How to YouTube", banner: "https://i.postimg.cc/J4pWL0nP/HTY.png", officialLink: "https://ankurwarikoo.com" },
+                    { name: "How to LinkedIn", banner: "https://i.postimg.cc/QCsk0XZT/LTL.png", officialLink: "https://ankurwarikoo.com" },
+                    { name: "Launching a Courses Business", banner: "https://i.postimg.cc/445zXRTW/BYOTB.webp", officialLink: "https://ankurwarikoo.com" },
+                    { name: "Make Writing a Career", banner: "https://i.postimg.cc/j5RL1CCt/MWYC.png", officialLink: "https://ankurwarikoo.com" },
+                    { name: "How to Speak Effectively", banner: "https://i.postimg.cc/brsNXnPc/TUGTEC.webp", officialLink: "https://ankurwarikoo.com" },
+                    { name: "Time Management Course for Students", banner: "https://i.postimg.cc/nrjZStKn/TMFS.webp", officialLink: "https://ankurwarikoo.com" },
+                    { name: "Personality Development Course", banner: "https://i.postimg.cc/d1DKDKxG/TUCT.webp", officialLink: "https://ankurwarikoo.com" },
+                    { name: "Books: Do Epic Shit + Get Epic Shit Done + Make Epic Money", banner: "https://i.postimg.cc/GmrttHJY/1757228464654.jpg", officialLink: "https://ankurwarikoo.com" },
+                    { name: "How to Starting Up", banner: "https://i.postimg.cc/GmqLpzpw/TCGTSU.webp", officialLink: "https://ankurwarikoo.com" }
+                ]
+            },
+            {
+                category: "BEERBICEPS SKILLHOUSE COURSES (Ranveer Allahbadia)",
+                courses: [
+                    { name: "Instagram 101", banner: "https://i.postimg.cc/76cbZ9mY/Screenshot-2025-0907-125307.png", officialLink: "https://skillhouse.beerbiceps.com" },
+                    { name: "Video Editing Mastery", banner: "https://i.postimg.cc/kM0y5318/1757229550840.png", officialLink: "https://skillhouse.beerbiceps.com" },
+                    { name: "Podcasting 101", banner: "https://i.postimg.cc/wj6Lt6ht/65f1813df03a6e3e0d47739a-TEAM-IMAGE02.jpg", officialLink: "https://skillhouse.beerbiceps.com" },
+                    { name: "Designing for Clicks", banner: "https://i.postimg.cc/yx4S7B18/01.jpg", officialLink: "https://skillhouse.beerbiceps.com" }
+                ]
+            },
+            {
+                category: "GANDHI UNIVERSITY COURSES",
+                courses: [
+                    { name: "The Ultimate Money Maker Workshop", banner: "https://i.postimg.cc/fyDTHbWm/Picsart-24-08-02-12-32-00-422.jpg", officialLink: "https://gandhiuniversity.com" },
+                    { name: "Ultimate Monk Challenge", banner: "https://i.postimg.cc/J02vsTF0/Picsart-25-08-03-02-03-13-006.png", officialLink: "https://gandhiuniversity.com" },
+                    { name: "21-Days Productive Challenge", banner: "https://i.postimg.cc/RZcpmVvN/Picsart-25-03-23-19-03-19-335-1.jpg", officialLink: "https://gandhiuniversity.com" },
+                    { name: "Porn Quitting Guide", banner: "https://i.postimg.cc/7PFprRSt/Picsart-24-11-15-13-18-25-818.jpg", officialLink: "https://gandhiuniversity.com" }
+                ]
+            },
+            {
+                category: "SHETABH GANGWAR COURSES",
+                courses: [
+                    { name: "Attack Mode", banner: "https://i.postimg.cc/4N8VhDwB/Screenshot-2025-0907-130528.png", officialLink: "https://example.com/shetabh-gangwar" },
+                    { name: "Nuclear Mode", banner: "https://placehold.co/600x400/f94144/white?text=Shetabh+Gangwar", officialLink: "https://example.com/shetabh-gangwar" }
+                ]
+            },
+            {
+                category: "VIDEO EDITING COURSES",
+                courses: [
+                    { name: "Manavisuals - Getting Started with Adobe After Effects", banner: "https://placehold.co/600x400/3a0ca3/white?text=Video+Editing", officialLink: "https://example.com/manavisuals" },
+                    { name: "GIGL - Zero to Hero Video Editing Course", banner: "https://placehold.co/600x400/4361ee/white?text=Video+Editing", officialLink: "https://example.com/gigl" },
+                    { name: "AEVYTV - Ultimate Video Mastery Cohort", banner: "https://placehold.co/600x400/f72585/white?text=Video+Editing", officialLink: "https://example.com/aevytv" },
+                    { name: "Tharunspeaks - Video Editing Cohort", banner: "https://placehold.co/600x400/4cc9f0/white?text=Video+Editing", officialLink: "https://example.com/tharunspeaks" },
+                    { name: "Billi4you - Complete Freelancing Guide Course Bundle", banner: "https://placehold.co/600x400/f9c74f/white?text=Video+Editing", officialLink: "https://example.com/billi4you" },
+                    { name: "Billi4U - Adobe Premiere Pro", banner: "https://placehold.co/600x400/f94144/white?text=Video+Editing", officialLink: "https://example.com/billi4u" },
+                    { name: "EZEdit - Video Editing Intermediate Course", banner: "https://placehold.co/600x400/3a0ca3/white?text=Video+Editing", officialLink: "https://example.com/ezedit" },
+                    { name: "EZEdit - Video Editing Basic Course", banner: "https://placehold.co/600x400/4361ee/white?text=Video+Editing", officialLink: "https://example.com/ezedit" },
+                    { name: "EZEdit - Video Editing Masterclass", banner: "https://placehold.co/600x400/f72585/white?text=Video+Editing", officialLink: "https://example.com/ezedit" },
+                    { name: "EZEdit - Map Animation", banner: "https://placehold.co/600x400/4cc9f0/white?text=Video+Editing", officialLink: "https://example.com/ezedit" },
+                    { name: "Deepak Daiya - Dynamic Edits", banner: "https://placehold.co/600x400/f9c74f/white?text=Video+Editing", officialLink: "https://example.com/deepak-daiya" },
+                    { name: "Editing Edition - Video Editing Course", banner: "https://placehold.co/600x400/f94144/white?text=Video+Editing", officialLink: "https://example.com/editing-edition" },
+                    { name: "The Ultimate Edit - Video Editing Course", banner: "https://placehold.co/600x400/3a0ca3/white?text=Video+Editing", officialLink: "https://example.com/ultimate-edit" },
+                    { name: "Mobile Video Editing Course (CapCut, Kinemaster, VN & More)", banner: "https://placehold.co/600x400/4361ee/white?text=Video+Editing", officialLink: "https://example.com/mobile-video-editing" }
+                ]
+            },
+            {
+                category: "SPOKEN ENGLISH COURSES",
+                courses: [
+                    { name: "Let's Talk Academy - All Course Bundle", banner: "https://placehold.co/600x400/f72585/white?text=Spoken+English", officialLink: "https://letstalk.academy" },
+                    { name: "Aleena Rais - English Speaking Course", banner: "https://placehold.co/600x400/4cc9f0/white?text=Spoken+English", officialLink: "https://example.com/aleena-rais" },
+                    { name: "Awal Madaan - Spoken English Course", banner: "https://placehold.co/600x400/f9c74f/white?text=Spoken+English", officialLink: "https://awalmadaan.in" },
+                    { name: "Neetu Singh - Spoken English Course", banner: "https://placehold.co/600x400/f94144/white?text=Spoken+English", officialLink: "https://example.com/neetu-singh" },
+                    { name: "The Winner's Institute - Spoken English Course", banner: "https://placehold.co/600x400/3a0ca3/white?text=Spoken+English", officialLink: "https://example.com/winners-institute" },
+                    { name: "Rahul Bhatnagar - Communication Mastery Course", banner: "https://placehold.co/600x400/4361ee/white?text=Spoken+English", officialLink: "https://example.com/rahul-bhatnagar" },
+                    { name: "iDigitalPreneur - English Grammar Mastery Course", banner: "https://placehold.co/600x400/f72585/white?text=Spoken+English", officialLink: "https://example.com/idigitalpreneur" },
+                    { name: "Somanshu Gaur - 30 Days Ultimate Mastery Course", banner: "https://placehold.co/600x400/4cc9f0/white?text=Spoken+English", officialLink: "https://example.com/somanshu-gaur" }
+                ]
+            },
+            {
+                category: "ANIMATION AND VFX COURSES",
+                courses: [
+                    { name: "Professor of How - 3D Animation Course", banner: "https://placehold.co/600x400/f9c74f/white?text=Animation+VFX", officialLink: "https://professorofhow.com" },
+                    { name: "Raturaj VFX Course", banner: "https://placehold.co/600x400/f94144/white?text=Animation+VFX", officialLink: "https://example.com/raturan-vfx" },
+                    { name: "2D Animation Course by Shanil Malik", banner: "https://placehold.co/600x400/3a0ca3/white?text=Animation+VFX", officialLink: "https://example.com/shanil-malik" },
+                    { name: "Maya 3D Animation Course", banner: "https://placehold.co/600x400/4361ee/white?text=Animation+VFX", officialLink: "https://example.com/maya-animation" },
+                    { name: "Maya Advanced 3D Animation Course (Hindi)", banner: "https://placehold.co/600x400/f72585/white?text=Animation+VFX", officialLink: "https://example.com/maya-advanced" },
+                    { name: "Skillsiya - Mobile 3D Animation Course", banner: "https://placehold.co/600x400/4cc9f0/white?text=Animation+VFX", officialLink: "https://skillsiya.com" },
+                    { name: "Skillsiya - Complete 3D Animation Course", banner: "https://placehold.co/600x400/f9c74f/white?text=Animation+VFX", officialLink: "https://skillsiya.com" }
+                ]
+            },
+            {
+                category: "RAJEEV MEHTA COURSE BUNDLE",
+                courses: [
+                    { name: "Campaign Design for Social Media", banner: "https://placehold.co/600x400/f94144/white?text=Rajeev+Mehta", officialLink: "https://example.com/rajeev-mehta" },
+                    { name: "Cinematic Sound for Editing", banner: "https://placehold.co/600x400/3a0ca3/white?text=Rajeev+Mehta", officialLink: "https://example.com/rajeev-mehta" },
+                    { name: "Break and Set the New Design Rules", banner: "https://placehold.co/600x400/4361ee/white?text=Rajeev+Mehta", officialLink: "https://example.com/rajeev-mehta" },
+                    { name: "High Contrast Thumbnails and Posters", banner: "https://placehold.co/600x400/f72585/white?text=Rajeev+Mehta", officialLink: "https://example.com/rajeev-mehta" },
+                    { name: "Basic to Advanced Graphic Design for Social Media", banner: "https://placehold.co/600x400/4cc9f0/white?text=Rajeev+Mehta", officialLink: "https://example.com/rajeev-mehta" },
+                    { name: "Documentary Style Video Editing", banner: "https://placehold.co/600x400/f9c74f/white?text=Rajeev+Mehta", officialLink: "https://example.com/rajeev-mehta" }
+                ]
+            },
+            {
+                category: "THUMBNAIL DESIGNING COURSES",
+                courses: [
+                    { name: "Deepak Daiya - The Art of Thumbnails", banner: "https://placehold.co/600x400/f94144/white?text=Thumbnail+Design", officialLink: "https://example.com/deepak-daiya" },
+                    { name: "Abhisekh Designs - Advanced YouTube Thumbnail Design", banner: "https://placehold.co/600x400/3a0ca3/white?text=Thumbnail+Design", officialLink: "https://example.com/abhisekh-designs" }
+                ]
+            },
+            {
+                category: "GRAPHIC DESIGNING COURSES",
+                courses: [
+                    { name: "Dipak Sisodiya - Graphic Designing Complete Bundle", banner: "https://placehold.co/600x400/4361ee/white?text=Graphic+Design", officialLink: "https://example.com/dipak-sisodiya" },
+                    { name: "Billi4U - Adobe Photoshop Masterclass (Zero to Hero Advanced)", banner: "https://placehold.co/600x400/f72585/white?text=Graphic+Design", officialLink: "https://example.com/billi4u" },
+                    { name: "Billi4U - Adobe Design", banner: "https://placehold.co/600x400/4cc9f0/white?text=Graphic+Design", officialLink: "https://example.com/billi4u" }
+                ]
+            },
+            {
+                category: "BLOGGING AND SEO COURSES",
+                courses: [
+                    { name: "Being Guru - Blogging Course", banner: "https://placehold.co/600x400/f9c74f/white?text=Blogging+SEO", officialLink: "https://beingguru.com" },
+                    { name: "My Secret to Earn ₹50,000 per Month with WordPress", banner: "https://placehold.co/600x400/f94144/white?text=Blogging+SEO", officialLink: "https://example.com/wordpress-secret" },
+                    { name: "Blogging Course in Hindi by Better Creator", banner: "https://placehold.co/600x400/3a0ca3/white?text=Blogging+SEO", officialLink: "https://bettercreator.in" },
+                    { name: "Ankit Singhla - Blogging Course", banner: "https://placehold.co/600x400/4361ee/white?text=Blogging+SEO", officialLink: "https://example.com/ankit-singhla" },
+                    { name: "Kulwant Negi - Blogging Course", banner: "https://placehold.co/600x400/f72585/white?text=Blogging+SEO", officialLink: "https://bloggingcage.com" },
+                    { name: "Deepak Kanakaraju - SEO Course", banner: "https://placehold.co/600x400/4cc9f0/white?text=Blogging+SEO", officialLink: "https://digitaldeepak.com" },
+                    { name: "Extreme Commerce - WordPress Course", banner: "https://placehold.co/600x400/f9c74f/white?text=Blogging+SEO", officialLink: "https://extremecommerce.com" }
+                ]
+            },
+            {
+                category: "FACEBOOK ADS COURSES (Digital Marketing)",
+                courses: [
+                    { name: "Sannidhya Baweja - Complete Facebook Ads Course", banner: "https://placehold.co/600x400/f94144/white?text=Facebook+Ads", officialLink: "https://example.com/sannidhya-baweja" },
+                    { name: "Sannidhya Baweja - Advanced Facebook Ads", banner: "https://placehold.co/600x400/3a0ca3/white?text=Facebook+Ads", officialLink: "https://example.com/sannidhya-baweja" },
+                    { name: "Aryan Tripathi - Master Facebook Ads Course", banner: "https://placehold.co/600x400/4361ee/white?text=Facebook+Ads", officialLink: "https://example.com/aryan-tripathi" },
+                    { name: "Depesh Mandalia - The AI Powered Facebook Ads & Offer Workshop", banner: "https://placehold.co/600x400/f72585/white?text=Facebook+Ads", officialLink: "https://example.com/depesh-mandalia" },
+                    { name: "Deepak Kanakaraju - Facebook Ads Mastery", banner: "https://placehold.co/600x400/4cc9f0/white?text=Facebook+Ads", officialLink: "https://digitaldeepak.com" }
+                ]
+            },
+            {
+                category: "SKILLNATION COURSES",
+                courses: [
+                    { name: "Jetan Shah - AI Tools and ChatGPT Workshop", banner: "https://placehold.co/600x400/f9c74f/white?text=Skillnation", officialLink: "https://skillnation.in" },
+                    { name: "Jetan Shah - MS Excel Course", banner: "https://placehold.co/600x400/f94144/white?text=Skillnation", officialLink: "https://skillnation.in" },
+                    { name: "Basic to Advanced SQL Masterclass", banner: "https://placehold.co/600x400/3a0ca3/white?text=Skillnation", officialLink: "https://skillnation.in" },
+                    { name: "Jetan Shah - Business Intelligence Using Power BI", banner: "https://placehold.co/600x400/4361ee/white?text=Skillnation", officialLink: "https://skillnation.in" },
+                    { name: "Jetan Shah - Basic to Advanced Tableau Course", banner: "https://placehold.co/600x400/f72585/white?text=Skillnation", officialLink: "https://skillnation.in" },
+                    { name: "Jetan Shah - Basic to Advanced PowerPoint", banner: "https://placehold.co/600x400/4cc9f0/white?text=Skillnation", officialLink: "https://skillnation.in" },
+                    { name: "LinkedIn Masterclass", banner: "https://placehold.co/600x400/f9c74f/white?text=Skillnation", officialLink: "https://skillnation.in" }
+                ]
+            },
+            {
+                category: "SELF-IMPROVEMENT COURSES",
+                courses: [
+                    { name: "Aditya Raj Kashyap - The Dangerous You", banner: "https://placehold.co/600x400/f94144/white?text=Self+Improvement", officialLink: "https://example.com/aditya-raj-kashyap" },
+                    { name: "Sandeep Maheshwari - Life Management Course", banner: "https://placehold.co/600x400/3a0ca3/white?text=Self+Improvement", officialLink: "https://sandeepmaheshwari.com" },
+                    { name: "Sakeen - How to Find Your Passion", banner: "https://placehold.co/600x400/4361ee/white?text=Self+Improvement", officialLink: "https://example.com/sakeen" },
+                    { name: "Pushkar Raj Thakur - Advanced", banner: "https://placehold.co/600x400/f72585/white?text=Self+Improvement", officialLink: "https://pushkarrajthakur.com" },
+                    { name: "Prakhar Gupta - Mastery Map Course", banner: "https://placehold.co/600x400/4cc9f0/white?text=Self+Improvement", officialLink: "https://example.com/prakhar-gupta" },
+                    { name: "Prakhar Gupta - Master the Art of Conversation", banner: "https://placehold.co/600x400/f9c74f/white?text=Self+Improvement", officialLink: "https://example.com/prakhar-gupta" },
+                    { name: "Prakhar Gupta - The Art of Conversion 2.0", banner: "https://placehold.co/600x400/f94144/white?text=Self+Improvement", officialLink: "https://example.com/prakhar-gupta" },
+                    { name: "Ram Verma - NLP Course", banner: "https://placehold.co/600x400/3a0ca3/white?text=Self+Improvement", officialLink: "https://example.com/ram-verma" },
+                    { name: "Jay Shetty - The Intelligent Approach to Personal Growth", banner: "https://placehold.co/600x400/4361ee/white?text=Self+Improvement", officialLink: "https://jayshetty.me" }
+                ]
+            },
+            {
+                category: "HEALTH AND FITNESS COURSES",
+                courses: [
+                    { name: "Jeet Salal - Bodybuilding", banner: "https://placehold.co/600x400/f72585/white?text=Health+Fitness", officialLink: "https://example.com/jeet-salal" },
+                    { name: "Shivangi Desai - Sleep Smarter", banner: "https://placehold.co/600x400/4cc9f0/white?text=Health+Fitness", officialLink: "https://example.com/shivangi-desai" },
+                    { name: "Shivangi Desai - 5 Day Detox Program", banner: "https://placehold.co/600x400/f9c74f/white?text=Health+Fitness", officialLink: "https://example.com/shivangi-desai" }
+                ]
+            },
+            {
+                category: "RELATIONSHIP BUILDING COURSES",
+                courses: [
+                    { name: "Chadtag - Chadmax (Ultimate Guide for Lookmaxxing)", banner: "https://placehold.co/600x400/f94144/white?text=Relationship", officialLink: "https://example.com/chadtag" },
+                    { name: "Prem Joshi - The Moggers Blueprint", banner: "https://placehold.co/600x400/3a0ca3/white?text=Relationship", officialLink: "https://example.com/prem-joshi" },
+                    { name: "Iron Man Lifestyle - Simp to Stud 2.0", banner: "https://placehold.co/600x400/4361ee/white?text=Relationship", officialLink: "https://example.com/iron-man-lifestyle" }
+                ]
+            }
+        ];
+
+        // Generate course categories and cards
+        const categoriesContainer = document.querySelector('.categories');
+        
+        coursesData.forEach((categoryData, index) => {
+            const categoryElement = document.createElement('div');
+            categoryElement.className = 'category';
+            
+            categoryElement.innerHTML = `
+                <h2 class="category-title">${categoryData.category}</h2>
+                <div class="courses-grid">
+                    ${categoryData.courses.map(course => `
+                        <div class="course-card">
+                            <div class="course-image" style="background-image: url('${course.banner}')">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="course-content">
+                                <h3 class="course-name">${course.name}</h3>
+                                <div class="course-buttons">
+                                    <button class="course-btn demo-btn" onclick="window.open('https://t.me/Skillcourses_free_telegram/14', '_blank')">
+                                        <i class="fas fa-eye"></i> View Demo
+                                    </button>
+                                    <button class="course-btn official-btn" onclick="window.open('${course.officialLink}', '_blank')">
+                                        <i class="fas fa-globe"></i> Official Site
+                                    </button>
+                                    <button class="course-btn access-btn" onclick="window.open('https://t.me/Ytmn5', '_blank')">
+                                        <i class="fas fa-lock-open"></i> Get Access
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            
+            categoriesContainer.appendChild(categoryElement);
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('.search-bar');
+        const noResults = document.getElementById('noResults');
+        const categories = document.querySelectorAll('.category');
+        
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            let hasResults = false;
+            
+            categories.forEach(category => {
+                const courseCards = category.querySelectorAll('.course-card');
+                let categoryHasResults = false;
+                
+                courseCards.forEach(card => {
+                    const courseName = card.querySelector('.course-name').textContent.toLowerCase();
+                    if (courseName.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        categoryHasResults = true;
+                        hasResults = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                if (categoryHasResults) {
+                    category.style.display = 'block';
+                } else {
+                    category.style.display = 'none';
+                }
+            });
+            
+            // Show no results message if no courses found
+            if (!hasResults && searchTerm.length > 0) {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
+        });
+
+        // Modal functionality
+        const premiumBtn = document.getElementById('premiumBtn');
+        const modal = document.getElementById('premiumModal');
+        const modalClose = document.getElementById('modalClose');
+        
+        premiumBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.style.display = 'flex';
+        });
+        
+        modalClose.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Scroll to top functionality
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
